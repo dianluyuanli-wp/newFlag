@@ -34,6 +34,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.4",
     "@babel/runtime": "^7.4.5",
+    "@types/react-router-dom": "^4.3.4",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "babel-plugin-dynamic-import-webpack": "^1.1.0",

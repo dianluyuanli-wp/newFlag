@@ -6,8 +6,8 @@ class flagStore {
     @observable userName: String ;
     constructor(opts) {
         //super(opts);
-        this.funcType = opts?.funcType || 'show-panel' ;
-        this.userName = opts?.userName || 'needLogin' ;
+        this.funcType = opts.funcType || 'show-panel' ;
+        this.userName = opts.userName || 'needLogin' ;
 
     }
 }

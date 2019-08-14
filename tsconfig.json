@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
       "module": "commonjs",
+      "noImplicitAny": true, 
+      "outDir": "./dist/",
       "target": "es6",
       "jsx": "react",
       "sourceMap": true,
@@ -10,5 +12,25 @@
     },
     "include": [
         "./page/**/*"
-    ]
+    ],
+    "exclude": [ "node_modules" ]
   }
+
+  // {
+  //   "compileOnSave": false,
+  //   "buildOnSave": false,
+  //   "compilerOptions": {
+  //     "target": "es6",
+  //     "jsx": "react",
+  //     "moduleResolution": "node", 
+  //     "allowSyntheticDefaultImports": true
+  //   },
+  //   "awesomeTypescriptLoaderOptions": {
+  //     "useBabel": true,
+  //     "useCache": false,
+  //     "emitRequireType": false
+  //   },
+  //   "exclude": [
+  //     "node_modules"
+  //   ]
+  // }

@@ -148,10 +148,47 @@ module.exports = {
                 ]
             },
             // {
+            //     test: /\.less?$/,
+            //     use: [
+            //         MiniCssExtractPlugin.loader,  //自动提取出css
+            //         'style-loader', // 不屏蔽的话会报错
+            //         'css-loader', 
+            //         'less-loader',
+            //     ]
+            // },
+            // {
             //     test: /\.(ts | tsx)$/,
             //     use: "ts-loader"
             // }
-            { test: /\.tsx?$/, loader: "awesome-typescript-loader" }
+            //{ test: /\.tsx?$/, loader: "babel-loader!awesome-typescript-loader" }
+            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+            // {
+            //     test: /\.tsx?$/,
+            //     exclude: /node_modules/,
+            //     use:[{
+            //         loader: 'awesome-typescript-loader',
+            //         query: {
+            //             babelrc: false,
+            //             presets: [
+            //                 '@babel/react', 
+            //                 '@babel/preset-env'
+            //             ],
+            //             plugins: [
+            //                 ["import", { "libraryName": "antd", "style": 'css' }]
+            //             ]
+            //         }
+            //     }],
+            //     // loader: 'awesome-typescript-loader',
+            //     // exclude: /node_modules/,
+            //     // options: {
+            //     //   babelOptions: {
+            //     //     "presets": ["react"],
+            //     //     "plugins": [
+            //     //       ["import", { "libraryName": "antd", "style": true }]
+            //     //     ]
+            //     //   }
+            //     // }
+            // }
         ]
     },
 

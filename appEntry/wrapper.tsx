@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { FC } from 'react';
 import { Provider, observer } from 'mobx-react';
 import Entry from '../page/home/index';
 // import Login from '../component/login';
@@ -37,10 +38,19 @@ import flagStore from './flagStore';
 //     }
 // }
 
-const dataWrapper: React.FunctionComponent = (userInfo) => {
-    const Store = new flagStore(this.props.userInfo);
+interface MyComponentProps {
+    className?: string;
+    style?: React.CSSProperties;
+    userInfo?: any
+  }
+  
+  
+
+const dataWrapper: FC<MyComponentProps> = props => {
+    console.log(props, 'dddd');
+    const Store = new flagStore({});
     return (
-        <Provider chatStore={Store}>
+        <Provider flagStore={Store}>
             <Router>
                 {/* <Route path='/login.html' component={Login} />
                 <Route path='/register.html' component={Register} /> */}
