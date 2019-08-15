@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-//const deleteOldFile = require('./tools/webpackPlugin/test');
+const deleteOldFile = require('./utils/clearPlugin');
 const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); //webpack4 替代extract-text-webpack-plugin，将css单独提取打包
 //import { useRemoteApi } from './constants/webpackConst';
@@ -12,6 +12,7 @@ const { CheckerPlugin } = require('awesome-typescript-loader')
 module.exports = {
     context: path.resolve(__dirname),
     entry: {
+        //app:['./appEntry/index.js'],
         app:['./appEntry/index.tsx']
     },
     output: {
@@ -65,14 +66,14 @@ module.exports = {
              template: './views/template.html',
              inject: 'body'
          }),
-         new CheckerPlugin()
+         new CheckerPlugin(),
         //  new ScriptExtHtmlWebpackPlugin({
         //     inline: /app.bundle.js/
         //  }),
-        //  new deleteOldFile({
-        //      exclude: /avatar/,
-        //      path: './dist'
-        //  }),
+        new deleteOldFile({
+            exclude: /avatar/,
+            path: './dist'
+        }),
         //  new webpack.NamedChunksPlugin(chunk => {
         //      if (chunk.name) {
         //          return chunk.name
@@ -147,48 +148,11 @@ module.exports = {
                     'css-loader?modules&localIdentName=[name]__[local]--[hash:base64:5]'
                 ]
             },
-            // {
-            //     test: /\.less?$/,
-            //     use: [
-            //         MiniCssExtractPlugin.loader,  //自动提取出css
-            //         'style-loader', // 不屏蔽的话会报错
-            //         'css-loader', 
-            //         'less-loader',
-            //     ]
-            // },
-            // {
-            //     test: /\.(ts | tsx)$/,
-            //     use: "ts-loader"
-            // }
-            //{ test: /\.tsx?$/, loader: "babel-loader!awesome-typescript-loader" }
-            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-            // {
-            //     test: /\.tsx?$/,
-            //     exclude: /node_modules/,
-            //     use:[{
-            //         loader: 'awesome-typescript-loader',
-            //         query: {
-            //             babelrc: false,
-            //             presets: [
-            //                 '@babel/react', 
-            //                 '@babel/preset-env'
-            //             ],
-            //             plugins: [
-            //                 ["import", { "libraryName": "antd", "style": 'css' }]
-            //             ]
-            //         }
-            //     }],
-            //     // loader: 'awesome-typescript-loader',
-            //     // exclude: /node_modules/,
-            //     // options: {
-            //     //   babelOptions: {
-            //     //     "presets": ["react"],
-            //     //     "plugins": [
-            //     //       ["import", { "libraryName": "antd", "style": true }]
-            //     //     ]
-            //     //   }
-            //     // }
-            // }
+            {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader!awesome-typescript-loader',
+            }
         ]
     },
 

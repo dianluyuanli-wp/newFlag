@@ -8,7 +8,6 @@ class flagStore {
         //super(opts);
         this.funcType = opts.funcType || 'show-panel' ;
         this.userName = opts.userName || 'needLogin' ;
-
     }
 }
 
