@@ -8,10 +8,17 @@
       "sourceMap": true,
       "allowSyntheticDefaultImports": true,
       "moduleResolution": "node",
-      "experimentalDecorators": true
+      "experimentalDecorators": true,
+      "baseUrl": ".",
+      "paths": {
+          "@apiMap": [
+              "map/api.tsx"
+          ]
+      },
     },
     "include": [
-        "./page/**/*"
+        "./page/**/*",
+        "./declaration.d.ts"
     ],
     "exclude": [ "node_modules" ]
   }

@@ -5,7 +5,8 @@ import { Radio, Avatar } from 'antd';
 //import BaseComponent from '../../../baseStructure/baseComponent';
 import { inject, observer } from 'mobx-react';
 import { toJS } from 'mobx';
-import './index.scss';
+import s from './index.css';
+import apiMap from '@apiMap';
 
 const RadioGroup = Radio.Group;
 // @inject("flagStore")
@@ -48,7 +49,7 @@ const HeaderPanel: FC = () => {
             <RadioGroup 
                 // defaultValue={this.baseStore.funcType} 
                 // onChange={this.changeRadio.bind(this, 'funcType')} 
-                className='header-group'>
+                className={s.header_group}>
                 <Radio value={'show-panel'}>展示模式</Radio>
                 <Radio value={'compile-panel'}>编辑模式</Radio>
             </RadioGroup>
@@ -59,7 +60,7 @@ const HeaderPanel: FC = () => {
         console.log(1111);
     }
     return (
-        <div className='body-panel'>
+        <div className={s.body_panel}>
             <Avatar onClick={consoleStore} style={{ backgroundColor: '#87d068' }}icon='user'/>
             {getFunctionSelect()}
         </div>

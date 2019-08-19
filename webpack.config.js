@@ -158,7 +158,7 @@ module.exports = {
 
     resolve: {
         alias: {
-            '@apiMap': path.resolve(__dirname, 'map/api'),
+            '@apiMap': path.resolve(__dirname, 'map/api.tsx'),
             '@constants': path.resolve(__dirname, 'constants'),
             '@tools': path.resolve(__dirname, 'tools'),
             '@UI': path.resolve(__dirname, 'UIwidgets')

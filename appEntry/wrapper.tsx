@@ -2,8 +2,8 @@ import * as React from 'react';
 import { FC } from 'react';
 import { Provider, observer } from 'mobx-react';
 import Entry from '../page/home/index';
-// import Login from '../component/login';
-// import Register from '../component/register';
+import Login from '../page/login/index';
+import Register from '../page/Register/index';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import flagStore from './flagStore';
 
@@ -52,8 +52,8 @@ const dataWrapper: FC<MyComponentProps> = props => {
     return (
         <Provider flagStore={Store}>
             <Router>
-                {/* <Route path='/login.html' component={Login} />
-                <Route path='/register.html' component={Register} /> */}
+                <Route path='/login.html' component={Login} />
+                <Route path='/register.html' component={Register} />
                 <Route path='/home.html' component={Entry} />
             </Router>
         </Provider>
