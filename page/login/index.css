@@ -1,0 +1,15 @@
+.login_form {
+    width: 3rem;
+    margin: 0 auto !important;
+    height: .2rem;
+    padding-top: .2rem;
+}
+
+.login_form_button {
+    width: 100%;
+}
+
+.login_register {
+    display: inline-block;
+    margin-bottom: 12px;
+}

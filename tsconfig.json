@@ -18,7 +18,8 @@
     },
     "include": [
         "./page/**/*",
-        "./declaration.d.ts"
+        "./declaration.d.ts",
+        "**/*"
     ],
     "exclude": [ "node_modules" ]
   }
