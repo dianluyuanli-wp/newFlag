@@ -45,7 +45,7 @@ const Template: FC = function() {
                                 // style={{ width: 200 }}
                                 defaultValue={tagValues}
                                 placeholder={'立下你的flag'}
-                                onChange={(value) => {runInAction(() => {item.itemArray = value})}}
+                                onChange={(value: Array<string>) => {runInAction(() => {item.itemArray = value})}}
                             >
                                 {tagArray.map((item, index) => {
                                     return (

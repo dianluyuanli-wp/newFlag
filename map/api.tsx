@@ -1,5 +1,6 @@
 const protocol = window.location.protocol;
 declare const apiFromLocal: any;
+declare const process: any;
 const apiDomain = (process.env.NODE_ENV === 'production' || apiFromLocal.PLACE === 'remote') ? protocol + '//tangshisanbaishou.xyz/api/' : 'http://localhost:3000/api/';
 const hostObject = {
     animal: {

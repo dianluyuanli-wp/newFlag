@@ -56,7 +56,7 @@ const ShowPanel: FC = function() {
                             <Select 
                                 style={{ width: '1.5rem' }}
                                 defaultValue={store.preferTemplate}
-                                onChange={(check) => {changeOwnSelect('preferTemplate', check)}}
+                                onChange={(check: string) => {changeOwnSelect('preferTemplate', check)}}
                                 placeholder={'选择首选flag模板'} >
                                 {store.templateArray.map((item: globalDec.template, index: number) => <Option key={index} value={item.name}>{item.name}</Option>)}
                             </Select>

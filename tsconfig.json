@@ -9,7 +9,7 @@
       "allowSyntheticDefaultImports": true,
       "moduleResolution": "node",
       "experimentalDecorators": true,
-      "baseUrl": ".",
+      "baseUrl": "./",
       "paths": {
           "@apiMap": [
               "map/api.tsx"
@@ -19,7 +19,8 @@
     },
     "include": [
         "./page/**/*",
-        "./declaration.d.ts",
+        "./types/declaration.d.ts",
+        "./types/xiaohuli-package/*",
         "**/*"
     ],
     "exclude": [ "node_modules" ]
