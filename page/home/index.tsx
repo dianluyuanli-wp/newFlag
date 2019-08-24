@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Provider, observer, inject } from 'mobx-react';
+import { observer } from 'mobx-react';
 import HeaderPanel from './HeaderPanel';
-//import BodyPanel from './BodyPanel';
+import BodyPanel from './BodyPanel';
 
 // function test() {
 //     return (
@@ -17,9 +17,9 @@ const Home: React.FC = () => {
     return(
         <React.Fragment>
             <HeaderPanel />
-            {/* <BodyPanel originData={data.data}/> */}
+            <BodyPanel />
         </React.Fragment>
     )
 }
 
-export default inject('flagStore')(observer(Home));
+export default observer(Home);

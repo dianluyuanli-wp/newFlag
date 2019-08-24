@@ -33,7 +33,6 @@ const register = function(props: FormComponentProps) {
             } else {
                 message.error('用户名已被占用')
             }
-            //console.log(res, 'answer');
           }
         });
     }

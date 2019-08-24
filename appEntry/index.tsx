@@ -24,9 +24,9 @@ async function mountDomOnHtml() {
     if (currentRoute === 'home' && !await verifyLogin()) {
         window.location.href='/login.html'
     }
-    const data = getData[currentRoute]();
+    const data = await getData[currentRoute]();
     const mountNode = document.getElementById('main');
-    ReactDom.render(<Wrapper userInfo={data} />, mountNode);
+    ReactDom.render(<Wrapper userInfo={data.data} />, mountNode);
 }
 
 mountDomOnHtml();

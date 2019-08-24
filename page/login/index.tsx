@@ -59,5 +59,3 @@ const Login = (props: FormComponentProps) => {
 
 const WrappedLogin = Form.create({ name: 'normal_login' })(Login);
 export default WrappedLogin;
-
-//const mainName = this.store.$content[mainIndex].name;

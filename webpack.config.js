@@ -160,7 +160,7 @@ module.exports = {
         alias: {
             '@apiMap': path.resolve(__dirname, 'map/api.tsx'),
             '@constants': path.resolve(__dirname, 'constants'),
-            '@tools': path.resolve(__dirname, 'tools'),
+            '@utils': path.resolve(__dirname, 'utils'),
             '@UI': path.resolve(__dirname, 'UIwidgets')
         },
         extensions: [

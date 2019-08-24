@@ -1,0 +1,28 @@
+.check_box {
+    display: block;
+}
+
+.check_box:nth-child(1) {
+    margin-left: 8px;
+}
+
+.body_card {
+    width: 3.5rem;
+    margin: 0 auto;
+}
+
+.small_card {
+    width: 2.5rem;
+    margin: 0 auto;
+}
+
+.card_2 {
+    margin-top: .05rem; 
+    height: 3rem;
+}
+
+.time {
+    padding-top: .05rem;
+    height: 2.4rem;
+    overflow-y: scroll;
+}

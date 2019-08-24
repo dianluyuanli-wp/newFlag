@@ -13,7 +13,8 @@
       "paths": {
           "@apiMap": [
               "map/api.tsx"
-          ]
+          ],
+          "@utils/*": ["utils/*"]
       },
     },
     "include": [

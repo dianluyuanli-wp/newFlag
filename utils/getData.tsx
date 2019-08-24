@@ -3,29 +3,9 @@ import apiMap from '@apiMap';
 import { netModel, writeCookie, parseCookie, getYearMonthDate } from 'xiaohuli-package';
 import { parseCookieObjToString } from './index';
 
-interface flagItem {
-    name: string;
-    value: boolean
-}
-interface attendance {
-    date?: string,
-    flagArray?: Array<flagItem>,
-    timeStamp?: Number,
-    userName?: string
-}
-interface dataStore {
-    userName?: string;
-    preferTemplate?: string,
-    templateArray?: Array<template>,
-    [propName: string]: any;
-}
-interface template {
-    name: string,
-    itemArray: Array<string>
-}
 const getFlagData = async(cookie: globalDec.anyObj = {}) => {
-    let data: dataStore = {};
-    let latestRecord: Array<attendance> = [{date: ''}];
+    let data: globalDec.dataStore = {};
+    let latestRecord: Array<globalDec.attendance> = [{date: ''}];
 
     //  获取模板
     const getCookieForServer = cookie ? {cookie: parseCookieObjToString(cookie)} : {};
@@ -54,7 +34,7 @@ const getFlagData = async(cookie: globalDec.anyObj = {}) => {
         data.isMarked = true;
     } else {
         //  如果没有打卡记录，根据模板生成全false的记录
-        const emptyArray: template = {
+        const emptyArray: globalDec.template = {
             name: '测试',
             itemArray : ['跑步']
         };

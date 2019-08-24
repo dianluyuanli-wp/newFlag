@@ -41,14 +41,13 @@ import flagStore from './flagStore';
 interface MyComponentProps {
     className?: string;
     style?: React.CSSProperties;
-    userInfo?: any
+    userInfo?: globalDec.flagStore
   }
   
   
 
 const dataWrapper: FC<MyComponentProps> = props => {
-    console.log(props, 'dddd');
-    const Store = new flagStore({});
+    const Store = new flagStore(props.userInfo);
     return (
         <Provider flagStore={Store}>
             <Router>
